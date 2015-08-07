@@ -1,0 +1,13 @@
+Package: readability
+Title: What the Package Does (one line)
+Version: 0.0.1
+Authors@R: c(person("Tyler", "Rinker", email = "tyler.rinker@gmail.com", role = c("aut", "cre")))
+Maintainer: Tyler Rinker <tyler.rinker@gmail.com>
+Description: What the package does (one paragraph)
+Depends: R (>= 3.2.1)
+Imports: syllable
+Suggests: testthat
+Date: 2015-08-06
+License: GPL-2
+LazyData: TRUE
+Roxygen: list(wrap = FALSE)
