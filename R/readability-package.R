@@ -1,6 +1,8 @@
-#' What the Package Does (one line)
+#' Calculate Readability Scores
 #'
-#' What the package does (one or more paragraphs)
+#' A collection of readability tools that utilize the
+#' \href{https://github.com/trinker/syllable}{\pkg{syllable}} package for fast
+#' calculation of readability scores by grouping variables.
 #' @docType package
 #' @name readability
 #' @aliases readability package-readability

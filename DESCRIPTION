@@ -1,13 +1,14 @@
 Package: readability
-Title: What the Package Does (one line)
+Title: Calculate Readability Scores
 Version: 0.0.1
-Authors@R: c(person("Tyler", "Rinker", email = "tyler.rinker@gmail.com", role = c("aut", "cre")))
+Authors@R: c(person("Tyler", "Rinker", email =
+        "tyler.rinker@gmail.com", role = c("aut", "cre")))
 Maintainer: Tyler Rinker <tyler.rinker@gmail.com>
-Description: What the package does (one paragraph)
+Description: Calculate readability scores by gouping variables.
 Depends: R (>= 3.2.1)
-Imports: syllable
+Imports: data.table, ggplot2, stats, syllable, tidyr
 Suggests: testthat
-Date: 2015-08-06
+Date: 2015-08-09
 License: GPL-2
 LazyData: TRUE
 Roxygen: list(wrap = FALSE)

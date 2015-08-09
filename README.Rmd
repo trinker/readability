@@ -12,14 +12,29 @@ regex <- "(^Version:\\s+)(\\d+\\.\\d+\\.\\d+)"
 loc <- grep(regex, desc)
 ver <- gsub(regex, "\\2", desc[loc])
 verbadge <- sprintf('<a href="https://img.shields.io/badge/Version-%s-orange.svg"><img src="https://img.shields.io/badge/Version-%s-orange.svg" alt="Version"/></a></p>', ver, ver)
+library(knitr)
 ````
+
+
+```{r, echo=FALSE}
+knit_hooks$set(htmlcap = function(before, options, envir) {
+  if(!before) {
+    paste('<p class="caption"><b><em>',options$htmlcap,"</em></b></p>",sep="")
+    }
+    })
+knitr::opts_knit$set(self.contained = TRUE, cache = FALSE)
+knitr::opts_chunk$set(fig.path = "inst/figure/")
+```
 
 [![Project Status: Wip - Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](http://www.repostatus.org/badges/0.1.0/wip.svg)](http://www.repostatus.org/#wip)
 [![Build Status](https://travis-ci.org/trinker/readability.svg?branch=master)](https://travis-ci.org/trinker/readability)
 [![Coverage Status](https://coveralls.io/repos/trinker/readability/badge.svg?branch=master)](https://coveralls.io/r/trinker/readability?branch=master)
 `r verbadge`
 
-**readability** is...
+<img src="inst/syllable_logo/r_readability.png" width="200" alt="qdapRegex Logo">  
+
+
+**readability** utilizes the [**syllable**](https://github.com/trinker/syllable) package for fast calculation of readability scores by grouping variables.
 
 # Installation
 
@@ -29,7 +44,7 @@ Download the [zip ball](https://github.com/trinker/readability/zipball/master) o
 
 ```r
 if (!require("pacman")) install.packages("pacman")
-pacman::p_load_gh("trinker/readability")
+pacman::p_load_gh("trinker/syllable", "trinker/readability")
 ```
 
 # Contact
@@ -38,3 +53,15 @@ You are welcome to:
 * submit suggestions and bug-reports at: <https://github.com/trinker/readability/issues>
 * send a pull request on: <https://github.com/trinker/readability/>
 * compose a friendly e-mail to: <tyler.rinker@gmail.com>
+
+# Examples 
+
+```{r}
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(syllable, readability)
+```
+
+```{r}
+(x <- with(presidential_debates_2012, readability(dialogue, list(person, time))))
+plot(x)
+```
