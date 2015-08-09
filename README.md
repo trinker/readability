@@ -11,7 +11,7 @@ Status](https://travis-ci.org/trinker/readability.svg?branch=master)](https://tr
 Status](https://coveralls.io/repos/trinker/readability/badge.svg?branch=master)](https://coveralls.io/r/trinker/readability?branch=master)
 <a href="https://img.shields.io/badge/Version-0.0.1-orange.svg"><img src="https://img.shields.io/badge/Version-0.0.1-orange.svg" alt="Version"/></a>
 </p>
-<img src="inst/syllable_logo/r_readability.png" width="200" alt="qdapRegex Logo">
+<img src="inst/syllable_logo/r_readability.png" width="200" alt="readability Logo">
 
 **readability** utilizes the
 [**syllable**](https://github.com/trinker/syllable) package for fast
