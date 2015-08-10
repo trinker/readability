@@ -6,7 +6,7 @@ Authors@R: c(person("Tyler", "Rinker", email =
 Maintainer: Tyler Rinker <tyler.rinker@gmail.com>
 Description: Calculate readability scores by gouping variables.
 Depends: R (>= 3.2.1)
-Imports: data.table, ggplot2, stats, syllable, tidyr
+Imports: data.table (>= 1.9.5), ggplot2, stats, syllable, tidyr
 Suggests: testthat
 Date: 2015-08-09
 License: GPL-2
