@@ -97,15 +97,15 @@ plot.readability <- function(x, ...){
 
     x[["grouping.var"]] <- apply(x[, attributes(x)[["groups"]], with = FALSE], 1, paste, collapse = ".")
     x[["grouping.var"]] <- factor(x[["grouping.var"]], levels = rev(x[["grouping.var"]]))
-    x[, attributes(x)[["groups"]]:=NULL]
+    x <- x[, attributes(x)[["groups"]]:=NULL]
     y <- tidyr::gather_(x, "Measure", "Value", c("Flesch_Kincaid", "Gunning_Fog_Index",
         "Coleman_Liau", "SMOG", "Automated_Readability_Index"))
 
     y[["Measure"]] <- gsub("_", " ", y[["Measure"]])
+    data.table::setDT(y)
 
     center_dat <- y[, list(upper = mean(Value) + SE(Value), lower = mean(Value) - SE(Value),
-        means = mean(Value)), by = "grouping.var"]
-
+        means = mean(Value)), keyby = "grouping.var"]
 
     nms <- gsub("(^|[[:space:]])([[:alpha:]])", "\\1\\U\\2", attributes(x)[["groups"]], perl=TRUE)
 
@@ -139,6 +139,8 @@ plot.readability <- function(x, ...){
 #' @export
 print.readability <- function(x, digits = 1, ...){
 
+    key_id <- NULL
+
     cols <- c("Flesch_Kincaid", "Gunning_Fog_Index", "Coleman_Liau",
        "SMOG", "Automated_Readability_Index", "Average_Grade_Level")
 
@@ -147,5 +149,8 @@ print.readability <- function(x, digits = 1, ...){
 
     y[["value"]] <- digit_format(y[["value"]], digits)
     y <- tidyr::spread_(y, "measure", "value")
-    print(y[order(key_id)][, "key_id" := NULL])
+    data.table::setDT(y)
+    y <- y[order(key_id)][, "key_id" := NULL]
+    print(y)
 }
+
