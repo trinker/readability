@@ -61,7 +61,7 @@ if (!require("pacman")) install.packages("pacman")
 pacman::p_load(syllable, readability)
 ```
 
-```{r}
+```{r, fig.width=10}
 (x <- with(presidential_debates_2012, readability(dialogue, list(person, time))))
 plot(x)
 ```
