@@ -33,7 +33,6 @@ Automated Readability Index and an average of the 5 readability scores.
 library(syllable)
 
 (x1 <- with(presidential_debates_2012, readability(dialogue, NULL)))
-plot(x1)
 
 (x2 <- with(presidential_debates_2012, readability(dialogue, list(person, time))))
 plot(x2)
