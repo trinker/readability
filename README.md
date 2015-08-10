@@ -55,6 +55,16 @@ Examples
     if (!require("pacman")) install.packages("pacman")
     pacman::p_load(syllable, readability)
 
+    ## 
+    ## readability installed
+
+    ## Warning in FUN(X[[i]], ...): restarting interrupted promise evaluation
+
+    ## Warning in FUN(X[[i]], ...): internal error -3 in R_decompress1
+
+    ## Warning in pacman::p_load(syllable, readability): Failed to install/load:
+    ## readability
+
     (x <- with(presidential_debates_2012, readability(dialogue, list(person, time))))
 
     ##        person   time Flesch_Kincaid Gunning_Fog_Index Coleman_Liau

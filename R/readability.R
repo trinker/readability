@@ -110,14 +110,17 @@ plot.readability <- function(x, ...){
 
     nms <- gsub("(^|[[:space:]])([[:alpha:]])", "\\1\\U\\2", attributes(x)[["groups"]], perl=TRUE)
 
+    xaxis <- floor(min(y[["Value"]])):ceiling(max(y[["Value"]]))
+
     ggplot2::ggplot(y, ggplot2::aes_string(y = "grouping.var")) +
         ggplot2::geom_vline(xintercept = mean(center_dat[["means"]]), size=.75, alpha = .25, linetype="dashed") +
-        ggplot2::geom_point(ggplot2::aes_string(color = "Measure", x = "Value"), size=1.4) +
-        ggplot2::geom_errorbarh(data = center_dat, size=.75, alpha=.3,
+       # ggplot2::geom_point(ggplot2::aes_string(color = "Measure", x = "Value"), size=1.4) +
+        ggplot2::geom_point(ggplot2::aes_string(color = "Measure", x = "Value"), size=2, shape=1) +
+        ggplot2::geom_errorbarh(data = center_dat, size=.75, alpha=.4,
             ggplot2::aes_string(x = "means", xmin="upper", xmax="lower"), height = .3) +
         ggplot2::geom_point(data = center_dat, ggplot2::aes_string(x = "means"), alpha = .5, shape=15, size=3) +
         ggplot2::geom_point(data = center_dat, ggplot2::aes_string(x = "means"), size=1) +
-        ggplot2::scale_x_continuous() +
+        ggplot2::scale_x_continuous(breaks = xaxis) +
         ggplot2::ylab(paste(nms, collapse = " & ")) +
         ggplot2::xlab("Grade Level") +
         ggplot2::theme_bw() +
