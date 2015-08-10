@@ -32,8 +32,11 @@ Automated Readability Index and an average of the 5 readability scores.
 \examples{
 library(syllable)
 
-(x <- with(presidential_debates_2012, readability(dialogue, NULL)))
-plot(x)
+(x1 <- with(presidential_debates_2012, readability(dialogue, NULL)))
+plot(x1)
+
+(x2 <- with(presidential_debates_2012, readability(dialogue, list(person, time))))
+plot(x2)
 }
 \references{
 Coleman, M., & Liau, T. L. (1975). A computer readability formula

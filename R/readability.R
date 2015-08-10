@@ -32,8 +32,11 @@
 #' @examples
 #' library(syllable)
 #'
-#' (x <- with(presidential_debates_2012, readability(dialogue, NULL)))
-#' plot(x)
+#' (x1 <- with(presidential_debates_2012, readability(dialogue, NULL)))
+#' plot(x1)
+#'
+#' (x2 <- with(presidential_debates_2012, readability(dialogue, list(person, time))))
+#' plot(x2)
 readability <- function(x, group, ...){
 
     n.sents <- n.words <- n.complexes <- n.polys <- n.chars <- Flesch_Kincaid <-
