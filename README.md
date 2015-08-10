@@ -67,28 +67,28 @@ Examples
 
     (x <- with(presidential_debates_2012, readability(dialogue, list(person, time))))
 
-    ##        person   time Flesch_Kincaid Gunning_Fog_Index Coleman_Liau
-    ##  1:  QUESTION time 2       8.607578         12.485232    10.056261
-    ##  2:     OBAMA time 1       9.059429         12.243625     8.871675
-    ##  3:     OBAMA time 3       8.466015         11.974787     8.756874
-    ##  4:    ROMNEY time 1       6.780839         10.155284     8.064754
-    ##  5:     OBAMA time 2       6.816751         10.232397     7.770485
-    ##  6:    ROMNEY time 3       6.678784         10.066703     7.541289
-    ##  7:    ROMNEY time 2       6.133848          9.342517     7.361826
-    ##  8: SCHIEFFER time 3       5.143031          8.664204     6.842990
-    ##  9:    LEHRER time 1       4.296108          8.275411     5.860235
-    ## 10:   CROWLEY time 2       4.340517          7.570080     5.558565
-    ##          SMOG Automated_Readability_Index Average_Grade_Level
-    ##  1: 12.025224                    8.195665           10.273992
-    ##  2: 11.430748                    9.564840           10.234064
-    ##  3: 11.521248                    8.508314            9.845448
-    ##  4: 10.295072                    6.626319            8.384454
-    ##  5: 10.312118                    6.584770            8.343304
-    ##  6: 10.229507                    6.187829            8.140822
-    ##  7:  9.731498                    5.613571            7.636652
-    ##  8:  9.316118                    4.322151            6.857699
-    ##  9:  8.971698                    3.013297            6.083350
-    ## 10:  8.521246                    3.085136            5.815109
+    ##        person   time Flesch_Kincaid Gunning_Fog_Index Coleman_Liau SMOG
+    ##  1:  QUESTION time 2            8.6              12.5         10.1 12.0
+    ##  2:     OBAMA time 1            9.1              12.2          8.9 11.4
+    ##  3:     OBAMA time 3            8.5              12.0          8.8 11.5
+    ##  4:    ROMNEY time 1            6.8              10.2          8.1 10.3
+    ##  5:     OBAMA time 2            6.8              10.2          7.8 10.3
+    ##  6:    ROMNEY time 3            6.7              10.1          7.5 10.2
+    ##  7:    ROMNEY time 2            6.1               9.3          7.4  9.7
+    ##  8: SCHIEFFER time 3            5.1               8.7          6.8  9.3
+    ##  9:    LEHRER time 1            4.3               8.3          5.9  9.0
+    ## 10:   CROWLEY time 2            4.3               7.6          5.6  8.5
+    ##     Automated_Readability_Index Average_Grade_Level
+    ##  1:                         8.2                10.3
+    ##  2:                         9.6                10.2
+    ##  3:                         8.5                 9.8
+    ##  4:                         6.6                 8.4
+    ##  5:                         6.6                 8.3
+    ##  6:                         6.2                 8.1
+    ##  7:                         5.6                 7.6
+    ##  8:                         4.3                 6.9
+    ##  9:                         3.0                 6.1
+    ## 10:                         3.1                 5.8
 
     plot(x)
 

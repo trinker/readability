@@ -127,3 +127,26 @@ plot.readability <- function(x, ...){
         ggplot2::scale_color_discrete(name="Readability\nScore")
 
 }
+
+
+#' Prints a readability Object
+#'
+#' Prints a readability object
+#'
+#' @param x A \code{readability} object.
+#' @param digits The number of digits to print.
+#' @param \ldots ignored.
+#' @method print readability
+#' @export
+print.readability <- function(x, digits = 1, ...){
+
+    cols <- c("Flesch_Kincaid", "Gunning_Fog_Index", "Coleman_Liau",
+       "SMOG", "Automated_Readability_Index", "Average_Grade_Level")
+
+    x[["key_id"]] <- 1:nrow(x)
+    y <- tidyr::gather_(x, "measure", "value", cols)
+
+    y[["value"]] <- digit_format(y[["value"]], digits)
+    y <- tidyr::spread_(y, "measure", "value")
+    print(y[order(key_id)][, "key_id" := NULL])
+}

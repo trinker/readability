@@ -21,3 +21,19 @@ automated_readability_index_  <- function(n.words, n.sents, n.chars){
 }
 
 SE <- function(x) sqrt(stats::var(x)/length(x))
+
+digit_format <- function (x, digits = 1) {
+    if (is.null(digits))
+        digits <- 3
+    if (length(digits) > 1) {
+        digits <- digits[1]
+        warning("Using only digits[1]")
+    }
+    x <- round(as.numeric(x), digits)
+    if (digits > 0)
+        x <- sprintf(paste0("%.", digits, "f"), x)
+    out <- gsub("^0(?=\\.)|(?<=-)0", "", x, perl = TRUE)
+    out[out == "NA"] <- NA
+    out
+}
+
