@@ -58,27 +58,27 @@ Examples
     (x <- with(presidential_debates_2012, readability(dialogue, list(person, time))))
 
     ##        person   time Flesch_Kincaid Gunning_Fog_Index Coleman_Liau SMOG
-    ##  1:  QUESTION time 2            9.1              13.0         10.2 12.4
-    ##  2:     OBAMA time 1            9.3              12.5          8.9 11.5
-    ##  3:     OBAMA time 3            8.9              12.5          8.9 11.8
-    ##  4:     OBAMA time 2            7.1              10.5          7.9 10.5
-    ##  5:    ROMNEY time 3            7.1              10.5          7.7 10.5
-    ##  6:    ROMNEY time 1            6.9              10.2          8.1 10.3
-    ##  7:    ROMNEY time 2            6.4               9.6          7.5  9.9
-    ##  8: SCHIEFFER time 3            5.6               9.1          7.1  9.6
-    ##  9:    LEHRER time 1            4.7               8.7          6.2  9.3
-    ## 10:   CROWLEY time 2            5.0               8.3          6.0  9.0
+    ##  1:  QUESTION time 2            8.6              12.5         10.1 12.0
+    ##  2:     OBAMA time 1            9.1              12.2          8.9 11.4
+    ##  3:     OBAMA time 3            8.5              12.0          8.8 11.5
+    ##  4:    ROMNEY time 1            6.8              10.2          8.1 10.3
+    ##  5:     OBAMA time 2            6.8              10.2          7.8 10.3
+    ##  6:    ROMNEY time 3            6.7              10.1          7.5 10.2
+    ##  7:    ROMNEY time 2            6.1               9.3          7.4  9.7
+    ##  8: SCHIEFFER time 3            5.1               8.7          6.8  9.3
+    ##  9:    LEHRER time 1            4.3               8.3          5.9  9.0
+    ## 10:   CROWLEY time 2            4.3               7.6          5.6  8.5
     ##     Automated_Readability_Index Average_Grade_Level
-    ##  1:                         8.8                10.7
-    ##  2:                         9.9                10.4
-    ##  3:                         9.1                10.2
-    ##  4:                         7.0                 8.6
-    ##  5:                         6.7                 8.5
-    ##  6:                         6.7                 8.5
-    ##  7:                         6.0                 7.9
-    ##  8:                         4.9                 7.2
-    ##  9:                         3.6                 6.5
-    ## 10:                         3.9                 6.4
+    ##  1:                         8.2                10.3
+    ##  2:                         9.6                10.2
+    ##  3:                         8.5                 9.8
+    ##  4:                         6.6                 8.4
+    ##  5:                         6.6                 8.3
+    ##  6:                         6.2                 8.1
+    ##  7:                         5.6                 7.6
+    ##  8:                         4.3                 6.9
+    ##  9:                         3.0                 6.1
+    ## 10:                         3.1                 5.8
 
     plot(x)
 
