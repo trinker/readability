@@ -150,7 +150,8 @@ print.readability <- function(x, digits = 1, ...){
     y[["value"]] <- digit_format(y[["value"]], digits)
     y <- tidyr::spread_(y, "measure", "value")
     data.table::setDT(y)
-    y <- y[order(key_id)][, "key_id" := NULL]
+    y <- y[order(key_id)]
+    y[, "key_id"] <- NULL
     print(y)
 }
 

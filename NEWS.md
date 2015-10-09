@@ -17,6 +17,19 @@ And constructed with the following guidelines:
 * Bug fixes and misc changes bumps the patch
 
 
+readability 0.1.0
+----------------------------------------------------------------
+
+**BUG FIXES**
+
+**NEW FEATURES**
+
+**MINOR FEATURES**
+
+IMPROVEMENTS
+
+**CHANGES**
+
 readability 0.0.1
 ----------------------------------------------------------------
 
