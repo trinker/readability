@@ -2,14 +2,13 @@ readability
 ============
 
 
-[![Project Status: Wip - Initial development is in progress, but there
-has not yet been a stable, usable release suitable for the
-public.](http://www.repostatus.org/badges/0.1.0/wip.svg)](http://www.repostatus.org/#wip)
+[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
 [![Build
 Status](https://travis-ci.org/trinker/readability.svg?branch=master)](https://travis-ci.org/trinker/readability)
 [![Coverage
 Status](https://coveralls.io/repos/trinker/readability/badge.svg?branch=master)](https://coveralls.io/r/trinker/readability?branch=master)
-[![DOI](https://zenodo.org/badge/5398/trinker/readability.svg)](https://zenodo.org/badge/latestdoi/5398/trinker/readability)<a href="https://img.shields.io/badge/Version-0.1.0-orange.svg"><img src="https://img.shields.io/badge/Version-0.1.0-orange.svg" alt="Version"/></a>
+[![DOI](https://zenodo.org/badge/5398/trinker/readability.svg)](https://zenodo.org/badge/latestdoi/5398/trinker/readability)
+<a href="https://img.shields.io/badge/Version-0.1.0-orange.svg"><img src="https://img.shields.io/badge/Version-0.1.0-orange.svg" alt="Version"/></a>
 </p>
 <img src="inst/readability_logo/r_readability.png" width="200" alt="readability Logo">
 
