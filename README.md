@@ -38,7 +38,10 @@ and run `R CMD INSTALL` on it, or use the **pacman** package to install
 the development version:
 
     if (!require("pacman")) install.packages("pacman")
-    pacman::p_load_gh("trinker/syllable", "trinker/readability")
+    pacman::p_load_gh(c(
+        "trinker/syllable", 
+        "trinker/readability"
+    ))
 
 Contact
 =======

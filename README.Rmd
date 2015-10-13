@@ -44,7 +44,10 @@ Download the [zip ball](https://github.com/trinker/readability/zipball/master) o
 
 ```r
 if (!require("pacman")) install.packages("pacman")
-pacman::p_load_gh("trinker/syllable", "trinker/readability")
+pacman::p_load_gh(c(
+    "trinker/syllable", 
+    "trinker/readability"
+))
 ```
 
 # Contact
