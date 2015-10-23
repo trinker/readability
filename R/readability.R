@@ -6,6 +6,8 @@
 #' @param x A character vector.
 #' @param group The grouping variable(s).  Takes a single grouping variable or a
 #' list of 1 or more grouping variables.
+#' @param group.names A vector of names that corresponds to group.  Generally
+#' for internal use.
 #' @param \ldots ignored
 #' @return Returns a \code{\link[base]{data.frame}}
 #' (\code{\link[data.table]{data.table}}) readability scores.
@@ -36,7 +38,7 @@
 #'
 #' (x2 <- with(presidential_debates_2012, readability(dialogue, list(person, time))))
 #' plot(x2)
-readability <- function(x, group, ...){
+readability <- function(x, group, group.names, ...){
 
     n.sents <- n.words <- n.complexes <- n.polys <- n.chars <- Flesch_Kincaid <-
         Gunning_Fog_Index <- Coleman_Liau <- SMOG <- Automated_Readability_Index <-
@@ -59,6 +61,10 @@ readability <- function(x, group, ...){
             grouping <- unlist(group)
         }
 
+    }
+
+    if(!missing(group.names)) {
+        G <- group.names
     }
 
     y <- syllable::readability_word_stats_by(x, grouping, group.names = G)
