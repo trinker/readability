@@ -12,12 +12,12 @@ install:
   - ./travis-tool.sh install_github hadley/devtools
   - ./travis-tool.sh install_deps
   - ./travis-tool.sh github_package jimhester/covr
-  - ./travis-tool.sh github_package trinker/syllable
   - ./travis-tool.sh github_package Rdatatable/data.table
   - ./travis-tool.sh github_package trinker/lexicon  
   - ./travis-tool.sh github_package jeroenooms/hunspell
   - ./travis-tool.sh github_package trinker/textclean
   - ./travis-tool.sh github_package trinker/textshape  
+  - ./travis-tool.sh github_package trinker/syllable  
 script:      ./travis-tool.sh run_tests
 after_success:
   - Rscript -e 'library(covr);coveralls()'
