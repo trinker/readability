@@ -14,6 +14,9 @@ install:
   - ./travis-tool.sh github_package jimhester/covr
   - ./travis-tool.sh github_package trinker/syllable
   - ./travis-tool.sh github_package Rdatatable/data.table
+  - ./travis-tool.sh github_package jeroenooms/hunspell
+  - ./travis-tool.sh github_package trinker/textclean
+  - ./travis-tool.sh github_package trinker/textshape  
 script:      ./travis-tool.sh run_tests
 after_success:
   - Rscript -e 'library(covr);coveralls()'
