@@ -38,7 +38,10 @@ the development version:
 
     if (!require("pacman")) install.packages("pacman")
     pacman::p_load_gh(c(
-        "trinker/syllable", 
+        'trinker/lexicon',
+        'trinker/textclean',
+        'trinker/textshape',
+        'trinker/syllable', 
         "trinker/readability"
     ))
 
