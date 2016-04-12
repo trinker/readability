@@ -22,7 +22,7 @@ smog_ <- function(n.sents, n.polys) {
 
 automated_readability_index_  <- function(n.words, n.sents, n.chars){
     out <- 4.71 * (n.chars/n.words) + 0.5 * (n.words/n.sents) - 21.43
-    ifelse(out < 1, 1, out) - 1
+    ceiling(ifelse(out < 1, 1, out)) - 1
 }
 
 SE <- function(x) sqrt(stats::var(x)/length(x))
