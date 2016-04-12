@@ -147,6 +147,7 @@ print.readability <- function(x, digits = 1, ...){
 
     key_id <- NULL
 
+    colord <-colnames(x)
     cols <- c("Flesch_Kincaid", "Gunning_Fog_Index", "Coleman_Liau",
        "SMOG", "Automated_Readability_Index", "Average_Grade_Level")
 
@@ -158,6 +159,6 @@ print.readability <- function(x, digits = 1, ...){
     data.table::setDT(y)
     y <- y[order(key_id)]
     y[, "key_id"] <- NULL
+    data.table::setcolorder(y, colord)
     print(y)
 }
-
