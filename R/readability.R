@@ -19,8 +19,7 @@
 #' Flesch R. (1948). A new readability yardstick. Journal of Applied Psychology.
 #' Vol. 32(3), pp. 221-233. doi: 10.1037/h0057532.
 #'
-#' Gunning, T. G. (2003). Building Literacy in the Content Areas. Boston: Allyn
-#' & Bacon.
+#' Gunning, Robert (1952). The Technique of Clear Writing. McGraw-Hill. pp. 36–37.
 #'
 #' McLaughlin, G. H. (1969). SMOG Grading: A New Readability Formula.
 #' Journal of Reading, Vol. 12(8), pp. 639-646.
