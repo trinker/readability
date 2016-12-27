@@ -39,7 +39,7 @@ r_github_packages:
   - Rdatatable/data.table
   - trinker/lexicon
   - jeroenooms/hunspell
-  - trinker/textclean
+  - trinker/textcleanLite
   - trinker/textshape
   - trinker/syllable
 
