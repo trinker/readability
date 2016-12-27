@@ -1,35 +1,61 @@
-language: java
+language: r
 
-sudo: required
+matrix:
+  include:
+    - os: linux
+      dist: precise
+      sudo: false
+      r: devel
+      before_install:
+        - mkdir -p  ~/.R
+        - echo 'CXX1X=g++ -std=c++0x -g -O2 -fPIC' > ~/.R/Makevars
+    - os: linux
+      dist: precise
+      sudo: false
+    - os: linux
+      dist: trusty
+      sudo: required
+      env: R_CODECOV=true
+    - os: osx
+      osx_image: xcode7.2
+      brew_packages: hunspell
+      latex: false
+    - os: osx
+      osx_image: beta-xcode6.1
+      latex: false
+      disable_homebrew: true
+
+addons:
+  apt:
+    packages:
+      - libhunspell-dev
+      - libpoppler-cpp-dev
+
 before_install:
-  - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
-  - chmod 755 ./travis-tool.sh
-  - ./travis-tool.sh bootstrap
-  - sudo apt-get install hunspell
-  - sudo apt-get install libhunspell-dev  
-install:
   - sh -e /etc/init.d/xvfb start
-  - sudo R CMD javareconf
-  - ./travis-tool.sh aptget_install r-cran-xml
-  - ./travis-tool.sh install_github hadley/devtools
-  - ./travis-tool.sh install_deps
-  - ./travis-tool.sh github_package jimhester/covr
-  - ./travis-tool.sh github_package Rdatatable/data.table
-  - ./travis-tool.sh github_package trinker/lexicon  
-  - ./travis-tool.sh github_package jeroenooms/hunspell
-  - ./travis-tool.sh github_package trinker/textclean
-  - ./travis-tool.sh github_package trinker/textshape  
-  - ./travis-tool.sh github_package trinker/syllable  
-script:      ./travis-tool.sh run_tests
-after_success:
-  - Rscript -e 'library(covr);coveralls()'
+
+r_github_packages:
+  - jimhester/covr
+  - Rdatatable/data.table
+  - trinker/lexicon
+  - jeroenooms/hunspell
+  - trinker/textclean
+  - trinker/textshape
+  - trinker/syllable
+
 notifications:
   email:
     on_success:      change
     on_failure:      change
+
+after_success:
+  - Rscript -e 'covr::coveralls()'
+
+r_build_args: "--resave-data=best"
+r_check_args: "--as-cran"
+
 env:
    global:
-     - R_BUILD_ARGS="--resave-data=best"
-     - R_CHECK_ARGS="--as-cran"
      - DISPLAY=:99.0
      - BOOTSTRAP_LATEX=1
+
