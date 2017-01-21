@@ -18,6 +18,21 @@ And constructed with the following guidelines:
 
 
 
+readability 0.1.1 -
+----------------------------------------------------------------
+
+**BUG FIXES**
+
+**NEW FEATURES**
+
+**MINOR FEATURES**
+
+**IMPROVEMENTS**
+
+**CHANGES**
+
+
+
 readability 0.1.0
 ----------------------------------------------------------------
 
