@@ -17,20 +17,8 @@ And constructed with the following guidelines:
 * Bug fixes and misc changes bumps the patch
 
 
+
 readability 0.1.0
-----------------------------------------------------------------
-
-BUG FIXES
-
-NEW FEATURES
-
-MINOR FEATURES
-
-IMPROVEMENTS
-
-CHANGES
-
-readability 0.0.1
 ----------------------------------------------------------------
 
 This package is a collection of readability tools that utilize the [**syllable**](https://github.com/trinker/syllable) package for fast calculation of readability scores by grouping variables.

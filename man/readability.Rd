@@ -7,13 +7,16 @@
 \alias{readability-package}
 \title{Calculate Readability Scores}
 \usage{
-readability(x, group, group.names, ...)
+readability(x, grouping.var, order.by.readability = TRUE, group.names, ...)
 }
 \arguments{
 \item{x}{A character vector.}
 
-\item{group}{The grouping variable(s).  Takes a single grouping variable or a
-list of 1 or more grouping variables.}
+\item{grouping.var}{The grouping variable(s).  Takes a single grouping
+variable or a list of 1 or more grouping variables.}
+
+\item{order.by.readability}{logical.  If \code{TRUE} orders the results
+descending by readability score.}
 
 \item{group.names}{A vector of names that corresponds to group.  Generally
 for internal use.}
@@ -33,12 +36,19 @@ Calculate the Flesch Kincaid, Gunning Fog Index, Coleman Liau, SMOG,
 Automated Readability Index and an average of the 5 readability scores.
 }
 \examples{
+\dontrun{
 library(syllable)
 
 (x1 <- with(presidential_debates_2012, readability(dialogue, NULL)))
 
 (x2 <- with(presidential_debates_2012, readability(dialogue, list(person, time))))
 plot(x2)
+
+(x2b <- with(presidential_debates_2012, readability(dialogue, list(person, time),
+    order.by.readability = FALSE)))
+
+(x3 <- with(presidential_debates_2012, readability(dialogue, TRUE)))
+}
 }
 \references{
 Coleman, M., & Liau, T. L. (1975). A computer readability formula
@@ -48,8 +58,7 @@ pp. 283-284.
 Flesch R. (1948). A new readability yardstick. Journal of Applied Psychology.
 Vol. 32(3), pp. 221-233. doi: 10.1037/h0057532.
 
-Gunning, T. G. (2003). Building Literacy in the Content Areas. Boston: Allyn
-& Bacon.
+Gunning, Robert (1952). The Technique of Clear Writing. McGraw-Hill. pp. 36-37.
 
 McLaughlin, G. H. (1969). SMOG Grading: A New Readability Formula.
 Journal of Reading, Vol. 12(8), pp. 639-646.

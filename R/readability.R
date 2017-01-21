@@ -4,8 +4,10 @@
 #' Automated Readability Index and an average of the 5 readability scores.
 #'
 #' @param x A character vector.
-#' @param group The grouping variable(s).  Takes a single grouping variable or a
-#' list of 1 or more grouping variables.
+#' @param grouping.var The grouping variable(s).  Takes a single grouping
+#' variable or a list of 1 or more grouping variables.
+#' @param order.by.readability logical.  If \code{TRUE} orders the results
+#' descending by readability score.
 #' @param group.names A vector of names that corresponds to group.  Generally
 #' for internal use.
 #' @param \ldots ignored
@@ -19,7 +21,7 @@
 #' Flesch R. (1948). A new readability yardstick. Journal of Applied Psychology.
 #' Vol. 32(3), pp. 221-233. doi: 10.1037/h0057532.
 #'
-#' Gunning, Robert (1952). The Technique of Clear Writing. McGraw-Hill. pp. 36–37.
+#' Gunning, Robert (1952). The Technique of Clear Writing. McGraw-Hill. pp. 36-37.
 #'
 #' McLaughlin, G. H. (1969). SMOG Grading: A New Readability Formula.
 #' Journal of Reading, Vol. 12(8), pp. 639-646.
@@ -31,33 +33,47 @@
 #' @export
 #' @importFrom data.table :=
 #' @examples
+#' \dontrun{
 #' library(syllable)
 #'
 #' (x1 <- with(presidential_debates_2012, readability(dialogue, NULL)))
 #'
 #' (x2 <- with(presidential_debates_2012, readability(dialogue, list(person, time))))
 #' plot(x2)
-readability <- function(x, group, group.names, ...){
+#'
+#' (x2b <- with(presidential_debates_2012, readability(dialogue, list(person, time),
+#'     order.by.readability = FALSE)))
+#'
+#' (x3 <- with(presidential_debates_2012, readability(dialogue, TRUE)))
+#' }
+readability <- function(x, grouping.var, order.by.readability = TRUE, group.names, ...){
 
     n.sents <- n.words <- n.complexes <- n.polys <- n.chars <- Flesch_Kincaid <-
         Gunning_Fog_Index <- Coleman_Liau <- SMOG <- Automated_Readability_Index <-
         Average_Grade_Level <- n.sylls <- NULL
 
-    if(is.null(group)) {
+    if(is.null(grouping.var)) {
         G <- "all"
         grouping <- rep("all", length(x))
     } else {
-        if (is.list(group) & length(group) > 1) {
-            m <- unlist(as.character(substitute(group))[-1])
-            G <- sapply(strsplit(m, "$", fixed=TRUE), function(x) {
-                    x[length(x)]
-                }
-            )
-            grouping <- group
+
+         if (isTRUE(grouping.var)) {
+                G <- "id"
+                grouping <- seq_along(x)
         } else {
-            G <- as.character(substitute(group))
-            G <- G[length(G)]
-            grouping <- unlist(group)
+
+            if (is.list(grouping.var) & length(grouping.var) > 1) {
+                m <- unlist(as.character(substitute(grouping.var))[-1])
+                G <- sapply(strsplit(m, "$", fixed=TRUE), function(x) {
+                        x[length(x)]
+                    }
+                )
+                grouping <- grouping.var
+            } else {
+                G <- as.character(substitute(grouping.var))
+                G <- G[length(G)]
+                grouping <- unlist(grouping.var)
+            }
         }
 
     }
@@ -80,7 +96,11 @@ readability <- function(x, group, group.names, ...){
         Average_Grade_Level = mean(c(Flesch_Kincaid, Gunning_Fog_Index, Coleman_Liau, SMOG, Automated_Readability_Index), na.rm=TRUE)
     ), by = c(
         grouping, "Flesch_Kincaid", "Gunning_Fog_Index", "Coleman_Liau", "SMOG", "Automated_Readability_Index"
-    )][order(-Average_Grade_Level)]
+    )]
+
+    if (isTRUE(order.by.readability)){
+        data.table::setorder(out, -Average_Grade_Level)
+    }
 
     class(out) <- unique(c("readability", class(out)))
     attributes(out)[["groups"]] <- grouping
