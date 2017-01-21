@@ -18,22 +18,8 @@ And constructed with the following guidelines:
 
 
 
-readability 0.1.1 -
-----------------------------------------------------------------
 
-**BUG FIXES**
-
-**NEW FEATURES**
-
-**MINOR FEATURES**
-
-**IMPROVEMENTS**
-
-**CHANGES**
-
-
-
-readability 0.1.0
+readability 0.1.1
 ----------------------------------------------------------------
 
 This package is a collection of <a href="https://github.com/trinker/readability" target="_blank">readability</a> tools that utilize the [**syllable**](https://github.com/trinker/syllable) package for fast calculation of <a href="https://github.com/trinker/readability" target="_blank">readability</a> scores by grouping variables.

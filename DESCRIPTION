@@ -4,7 +4,14 @@ Version: 0.1.1
 Authors@R: c(person("Tyler", "Rinker", email =
         "tyler.rinker@gmail.com", role = c("aut", "cre")))
 Maintainer: Tyler Rinker <tyler.rinker@gmail.com>
-Description: Calculate readability scores by gouping variables.
+Description: Calculate readability scores by grouping variables.  Readability is
+        an approximation of the ease with which a reader parses and comprehends a
+        written text.  These scores use text attributes such as syllable counts,
+        number of words, and number of characters to calculate an approximate
+        grade level reading ease for the text.  The readability scores that are
+        calculated include: Flesch Kincaid, Gunning Fog Index, Coleman Liau,
+        SMOG, and Automated Readability Index.
+233. doi:10.1037/h0057532
 Depends: R (>= 3.2.1)
 Imports: data.table (>= 1.9.6), ggplot2, stats, syllable, tidyr
 Suggests: testthat
