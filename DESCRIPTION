@@ -11,7 +11,6 @@ Description: Calculate readability scores by grouping variables.  Readability is
         grade level reading ease for the text.  The readability scores that are
         calculated include: Flesch Kincaid, Gunning Fog Index, Coleman Liau,
         SMOG, and Automated Readability Index.
-233. doi:10.1037/h0057532
 Depends: R (>= 3.2.1)
 Imports: data.table (>= 1.9.6), ggplot2, stats, syllable, tidyr
 Suggests: testthat

@@ -10,7 +10,6 @@ Status](https://travis-ci.org/trinker/readability.svg?branch=master)](https://tr
 [![Coverage
 Status](https://coveralls.io/repos/trinker/readability/badge.svg?branch=master)](https://coveralls.io/r/trinker/readability?branch=master)
 [![DOI](https://zenodo.org/badge/5398/trinker/readability.svg)](https://zenodo.org/badge/latestdoi/5398/trinker/readability)
-[![](http://cranlogs.r-pkg.org/badges/readability)](https://cran.r-project.org/package=readability)
 <a href="https://img.shields.io/badge/Version-0.1.1-orange.svg"><img src="https://img.shields.io/badge/Version-0.1.1-orange.svg" alt="Version"/></a>
 </p>
 <img src="inst/readability_logo/r_readability.png" width="200" alt="readability Logo">
