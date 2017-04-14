@@ -13,10 +13,8 @@ before_install:
 
 r_github_packages:
   - jimhester/covr
-  - Rdatatable/data.table
-  - trinker/lexicon
   - jeroenooms/hunspell
-  - trinker/textcleanLite
+  - trinker/textclean
   - trinker/textshape
   - trinker/syllable
 
