@@ -13,7 +13,8 @@ Status](https://coveralls.io/repos/trinker/readability/badge.svg?branch=master)]
 [![](http://cranlogs.r-pkg.org/badges/readability)](https://cran.r-project.org/package=readability)
 <a href="https://img.shields.io/badge/Version-0.1.2-orange.svg"><img src="https://img.shields.io/badge/Version-0.1.2-orange.svg" alt="Version"/></a>
 </p>
-<img src="inst/readability_logo/r_readability.png" width="200" alt="readability Logo">
+
+![](tools/readability_logo/r_readability.png)
 
 **readability** utilizes the
 [**syllable**](https://github.com/trinker/syllable) package for fast
@@ -89,4 +90,4 @@ Examples
 
     plot(x)
 
-![](inst/figure/unnamed-chunk-4-1.png)
+![](tools/figure/unnamed-chunk-4-1.png)

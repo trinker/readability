@@ -2,9 +2,10 @@
 % Please edit documentation in R/readability-package.R, R/readability.R
 \docType{package}
 \name{readability}
-\alias{package-readability}
 \alias{readability}
+\alias{package-readability}
 \alias{readability-package}
+\alias{readability}
 \title{Calculate Readability Scores}
 \usage{
 readability(x, grouping.var, order.by.readability = TRUE, group.names, ...)
@@ -77,4 +78,3 @@ Technical Report AMRLTR-66-220, University of Cincinnati, Cincinnati, Ohio.
 \keyword{SMOG,}
 \keyword{Write}
 \keyword{readability,}
-
