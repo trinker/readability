@@ -2,9 +2,7 @@ readability   [![Follow](https://img.shields.io/twitter/follow/tylerrinker.svg?s
 ============
 
 
-[![Project Status: Active - The project has reached a stable, usable
-state and is being actively
-developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
+[![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
 [![Build
 Status](https://travis-ci.org/trinker/readability.svg?branch=master)](https://travis-ci.org/trinker/readability)
 [![Coverage
